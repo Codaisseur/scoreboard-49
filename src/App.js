@@ -1,12 +1,18 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Scoreboard from "./components/Scoreboard";
+import HomePage from "./pages/HomePage";
+import AboutUsPage from "./pages/AboutUsPage";
+import DetailsPage from "./pages/DetailsPage";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <Scoreboard />
+        <Switch>
+          <Route path='/about' component={AboutUsPage} />
+          <Route path='/categories/:categoryName' component={DetailsPage} />
+          <Route path='/' component={HomePage} />
+        </Switch>
       </header>
     </div>
   );
